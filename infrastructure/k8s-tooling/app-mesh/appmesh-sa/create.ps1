@@ -1,0 +1,1 @@
+helm upgrade --install --namespace appmesh-system appmesh-controller .

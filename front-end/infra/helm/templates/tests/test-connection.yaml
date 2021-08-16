@@ -1,0 +1,17 @@
+{{- if .Values.test.enabled }}
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "bookstore-front-end.fullname" . }}-test-connection"
+  labels:
+    {{- include "bookstore-front-end.labels" . | nindent 4 }}
+  annotations:
+    "bookstore-front-end.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "bookstore-front-end.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
+{{- end }}
