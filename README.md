@@ -1,5 +1,5 @@
 ## Key Features
-1. AWS Infrastructure (IaC) via Terraform.
+1. AWS Infrastructure (IaC) using Terraform.
 2. Full blown microservices - APIs and Front End in different runtimes.
 3. Docker Compose for local testing.
 4. Helm for Kubernetes Deployment.
